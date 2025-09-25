@@ -6,8 +6,9 @@ This project started as a way to keep track of my progress, but it also serves a
 
 ## 🔍 What you’ll find here
 - Personal write-ups on what I’ve learned so far  
-- Notes on Cyber Security, Bug Bounty, Pentesting, OSINT, and more  
-- A simple log of my progress that I can look back on over time  
+- Notes on Cyber Security, Bug Bounty, Pentesting, IT, and more  
+- A simple log of my progress that I can look back on over time
+- A mini CTF on the Contact page, that has a very special surprise waiting for you ;)
 
 ## 🚀 Goals
 - To build a habit of **writing down what I learn**  
