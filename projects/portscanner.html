@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simple Python Port Scanner</title>
+  <meta name="description" content="What I learned setting up WSL, VS Code integration, and building a simple Python port scanner" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+
+<header>
+  <div class="navbar">
+    <div class="brand-search">
+      <strong class="brand">MyCyberLog</strong>
+      <form class="search-bar" action="#" method="get">
+        <input type="text" name="q" placeholder="Search posts..." />
+        <button type="submit">🔍</button>
+      </form>
+    </div>
+
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../blog.html">Blog</a>
+      <a href="../about.html">About Me</a>
+      <a href="../projects.html">Projects</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+
+<main class="posts" style="max-width: 900px; margin: 2rem auto;">
+
+  <h1 class="post-title">Simple Python Port Scanner</h1>
+
+  <article class="post">
+
+    <p style="color:#8b949e; font-size:0.9rem; margin-bottom:1rem;">
+      Posted on September 26, 2025
+    </p>
+
+    <p>
+      I built a simple Python port scanner after following a YouTube tutorial, but most of the learning happened
+      while getting the development environment ready. The first big step was getting a Linux terminal on my Windows 11 laptop.
+      I installed the Windows Subsystem for Linux (WSL) and set up Ubuntu so I could use familiar Linux tools, install packages,
+      and run the exact commands used in the tutorial. Having a real Linux shell made it much easier to follow along and experiment.
+    </p>
+
+    <p>
+      My initial attempt to enable WSL with the plain <code>wsl --install</code> command failed and produced confusing errors.
+      The fix for me was to explicitly install Ubuntu. Running the installer with the distribution specified (for example
+      <code>wsl --install -d Ubuntu</code>) succeeded and gave me access to a bash terminal inside Windows. After that I could update
+      packages, install tools, and treat the environment like any other Ubuntu system.
+    </p>
+
+    <p>
+      For writing a python script, I used Visual Studio Code, so I had to learn how to open and use the integrated WSL/Ubuntu terminal inside VS Code.
+      The editor’s built-in terminal dropdown lets you choose the default shell — once pointed at WSL it opens bash
+      inside the editor window. I was extremly happy to see that a Ubuntu terminal successfully opened in VS code.
+    </p>
+
+    <figure style="margin: 1rem 0 2rem 0; text-align:center;">
+      <img src="../pictures/Portscanner_code.png" alt="VS Code with WSL terminal"
+           style="max-width:100%; height:auto; border:1px solid #30363d; border-radius:12px;" />
+      <figcaption style="margin-top:0.5rem; font-size:0.95rem; color:#8b949e;">
+        <strong>Figure:</strong> VS Code using the integrated Ubuntu (WSL) terminal — where I ran my Python scanner.
+      </figcaption>
+    </figure>
+
+    <h2>Where the idea came from</h2>
+
+    <p>
+      The idea came from searching for good beginner-friendly cyber-security Python projects;
+      while researching I found a short YouTube tutorial that walked through a simple TCP port
+      scanner step-by-step. I followed that video closely — the scanner code itself is written
+      by the original creator (see the tutorial
+      <a href="https://www.youtube.com/watch?v=fhn9-PQBN7g&t=28s" target="_blank" rel="noopener noreferrer" style="color: var(--accent);">
+        here on YouTube
+      </a>)
+      — and what I’m sharing in this post is only my explanation of the steps I took and what
+      I learned while reproducing and experimenting with their code.
+    </p>
+
+    <h2>What I learned</h2>
+
+    <p>
+      There were several practical takeaways from the whole process. First,
+      in Ubuntu you typically run Python with <code>python3</code> (e.g., <code>python3 PortScanner.py</code>),
+      because the plain <code>python</code> command may not point to Python 3 on a fresh system.
+      I also installed <code>pip</code> to manage Python packages and installed utilities
+      like <code>nmap</code>. To get those tools set up I updated the package lists and installed the
+      packages from the WSL terminal — <code>sudo apt update</code> followed by
+      <code>sudo apt install nmap python3-nmap</code> (and <code>sudo apt install python3-pip</code> to install pip)
+      — which completed successfully and let me use <code>nmap</code> and the Python nmap bindings
+      from within the same Ubuntu environment.
+    </p>
+
+    <p>
+      I learned how important file location is: keeping the project in the WSL filesystem (not on the Windows side)
+      avoids permission and path issues when running commands from bash. I also learned to use the VS Code Remote - WSL features
+      so the editor behaves as if it’s running inside Ubuntu, which keeps environment and dependency handling consistent.
+    </p>
+
+    <p>
+      On the code side, the making of the scanner itself reinforced my python programming knowledge.
+      Even tho, I have a long way to go and that this project did not require me to write code by myself,
+      I got familiar with some interesting aspects of writing code in python.
+      I also got to know how to use nmap inside a python script and what <code>sV and sC</code> means.
+    </p>
+
+    <h3>Disclaimer!!!</h3>
+
+    <p>
+      <strong>
+        Always obtain explicit authorization before scanning any network, host, or service.
+        Unauthorized port scanning can be considered intrusive activity and may violate terms
+        of service or local laws. Run scans only against machines you own, systems you have written
+        permission to test, or purpose-built public test servers. One well-known, permissioned
+        target is <code>scanme.nmap.org</code>, which the Nmap project provides for testing and learning
+        — use it (or your own lab) rather than scanning random third-party sites.
+      </strong>
+    </p>
+
+    <p>
+      To confirm the IP address of a host you plan to scan from the WSL/Ubuntu bash terminal,
+      you can use: <code>dig +short scanme.nmap.org</code> — this returns the numeric IP(s) for
+      <code>scanme.nmap.org</code> so you can be sure you are targeting the intended test host.
+    </p>
+
+  </article>
+
+</main>
+
+<footer>
+  &copy; 2025 Jernej |
+  <a href="https://github.com/Humm1ngB1rd77" style="color: var(--accent);">GitHub</a> |
+  <a href="https://www.linkedin.com/in/jpetek/" style="color: var(--accent);">LinkedIn</a>
+</footer>
+
+</body>
+</html>
+
+
+
