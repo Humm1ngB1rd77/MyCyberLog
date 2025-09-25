@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What the Hell Is a Packet? – MyCyberLog</title>
+  <meta name="description" content="A beginner-friendly explanation of network packets—why data is split, what's inside a packet, and why packets matter for cybersecurity." />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+
+<header>
+  <div class="navbar">
+    <div class="brand-search">
+      <strong class="brand">MyCyberLog</strong>
+      <form class="search-bar" action="#" method="get">
+        <input type="text" name="q" placeholder="Search posts..." />
+        <button type="submit">🔍</button>
+      </form>
+    </div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../blog.html">Blog</a>
+      <a href="../about.html">About Me</a>
+      <a href="../projects.html">Projects</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+
+<main class="posts" style="max-width: 800px; margin: 2rem auto;">
+  <h1 class="post-title">What the Hell Is a Packet?</h1>
+  <article class="post">
+
+
+    <p>When I first started learning networking, everyone kept talking about “packets.” “Packet this, packet that…” I was nodding along but thinking:</p>
+    <blockquote><em>Okay, but… what the hell is a packet?</em></blockquote>
+    <p>Turns out, a <strong>packet</strong> is just a small chunk of data — but one that’s packaged with everything needed to get it from Point A to Point B.</p>
+
+    <h2>1) Why Do We Even Use Packets?</h2>
+    <p>Think of sending a massive book to a friend. You <em>could</em> send it whole, but it’s bulky, risky, and slow. Instead, you split it into chapters, put each in its own envelope,
+      label them, and send them separately (no one would do that, I know, but you get the point).
+      That’s how computers transmit data.</p>
+    <ul>
+      <li>Big data (videos, emails, images) is chopped into <strong>packets</strong>.</li>
+      <li>Each packet can travel separately — sometimes along different routes.</li>
+      <li>The receiver reassembles them in the right order.</li>
+    </ul>
+
+    <h2>2) Under the Hood: It’s All 1s and 0s</h2>
+    <p>Underneath the apps and pretty UIs, computers only understand <strong>binary</strong> — 1s and 0s. A packet is just a structured way of grouping those bits so that:</p>
+    <ul>
+      <li>Sender and receiver <strong>agree what the bits mean</strong> (protocols).</li>
+      <li>The network knows <strong>where to send them</strong>.</li>
+    </ul>
+
+    <h2>3) What’s Inside a Packet?</h2>
+    <p>A packet is a <strong>formatted data unit</strong> made up of:</p>
+    <ol>
+      <li><strong>Header</strong> — the “envelope” with delivery info:
+        <ul>
+          <li><strong>Source/Destination addresses</strong></li>
+          <li><strong>Protocol details</strong> (e.g., TCP or UDP)</li>
+          <li><strong>Control data</strong> like sequencing and checksums</li>
+        </ul>
+      </li>
+      <li><strong>Payload</strong> — the actual content (a chunk of a file, message text, video data, etc.).</li>
+    </ol>
+
+    <!-- IMAGE GOES HERE -->
+    <figure style="margin: 2rem 0; text-align: center;">
+      <img src="../pictures/network-packet.jpg" alt="Anatomy of a Typical Network Packet" style="max-width:100%; height:auto; border:1px solid var(--muted); border-radius:12px;"/>
+      <em>Source: Network Encyclopedia</em>
+      <figcaption style="margin-top:0.5rem; font-size:0.95rem; color:var(--muted-foreground);">
+        <strong>Figure:</strong> Anatomy of a Typical Network Packet – This diagram shows how packet data is structured across networking layers.
+        At <strong>Level 2 (Data Link)</strong>, packets include physical MAC addresses. <strong>Level 3 (Network)</strong> adds logical IP addresses
+        for routing. <strong>Level 4 (Transport)</strong> includes port numbers (e.g., TCP or UDP) for directing data to the right service.
+        <strong>Levels 5–7 (Application)</strong> contain the actual application data, such as HTTP requests, FTP transfers, DHCP messages, or DNS lookups.
+
+
+      </figcaption>
+    </figure>
+
+
+    <h2>4) Packet vs. Frame (Quick Heads-Up)</h2>
+    <p>In OSI terms, a <strong>packet</strong> lives at Layer 3 (Network), while a <strong>frame</strong> is Layer 2 (Data Link). Think of the packet as the inner envelope (for end-to-end delivery) and the frame as the outer envelope your local network adds for the next hop.</p>
+
+    <h2>5) Packets in the Wild</h2>
+    <p>Packets pass through routers, switches, firewalls, and cables — each device reads the header to decide what to do next. If a packet gets lost, <strong>TCP</strong> notices and asks for it again; <strong>UDP</strong> doesn’t, which is why it’s faster but less reliable.</p>
+
+    <h2>6) Why Packets Matter in Cybersecurity</h2>
+    <ul>
+      <li><strong>Packet sniffing</strong> (Wireshark) shows who’s talking to whom and how.</li>
+      <li><strong>Firewalls</strong> filter packets by header rules before letting them through.</li>
+      <li>Attacks like spoofing, DDoS, and data exfiltration leave <strong>packet-level clues</strong>.</li>
+    </ul>
+    <p>Learning packets is like reading the <strong>DNA of network traffic</strong>. Once you can, networking and security make way more sense.</p>
+
+    <h2>7) My Takeaway</h2>
+    <p>A packet isn’t magic. It’s a well-organized envelope carrying binary data — millions of 1s and 0s — from one place to another, all day, every day, all over the world.</p>
+
+
+    <hr />
+    <p><strong>Challenge:</strong> Install Wireshark, run a short capture, and try to identify source and destination addresses in the packet headers.</p>
+    <p>You can find the tutorial on how to download and use wireshark <a href="https://www.youtube.com/watch?v=4_7A8Ikp5Cc" style="color: var(--accent);" target="_blank">HERE</a>,
+      or you can check out one of my posts:<a href ="wireshark-intro.html" style="color: var(--accent);"> The Predator of Packets</p>
+  </article>
+</main>
+
+<footer>
+  &copy; 2025 Jernej |
+  <a href="https://github.com/Humm1ngB1rd77" style="color: var(--accent);">GitHub</a> |
+  <a href="https://www.linkedin.com/in/jpetek/" style="color: var(--accent);">LinkedIn</a>
+</footer>
+
+</body>
+</html>

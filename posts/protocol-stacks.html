@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OSI and TCP/IP Models – The Maps of Networking</title>
+    <meta name="description" content="A beginner-friendly explanation of the OSI and TCP/IP models, how they compare, and why understanding layers matters for cybersecurity." />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+
+<header>
+    <div class="navbar">
+        <div class="brand-search">
+            <strong class="brand">MyCyberLog</strong>
+            <form class="search-bar" action="#" method="get">
+                <input type="text" name="q" placeholder="Search posts..." />
+                <button type="submit">🔍</button>
+            </form>
+        </div>
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="../blog.html">Blog</a>
+            <a href="../about.html">About Me</a>
+            <a href="../projects.html">Projects</a>
+            <a href="../contact.html">Contact</a>
+        </nav>
+    </div>
+</header>
+
+
+<main class="posts" style="max-width: 900px; margin: 2rem auto;">
+
+    <h1 class="post-title">OSI and TCP/IP Models – The Maps of Networking</h1>
+
+    <article class="post">
+        <p style="color:#8b949e; font-size:0.9rem; margin-bottom:1rem;">Posted on August 9, 2025</p>
+
+        <p>Everyone building networks — or even poking around Wi-Fi — hears about “protocol stacks.” Initially, that sounded like <em>overkill theory</em> to me: complicated stuff I’d probably never need. But after reading a refresher and revisiting the basics, it clicked. These models are just <strong>maps</strong> showing how data actually travels across networks.</p>
+
+        <h2>1) What I Learned</h2>
+        <p>The <strong>TCP/IP model</strong> originated in DARPA’s research in the late 1960s, with version 4 published in 1981. The <strong>OSI model</strong>, introduced by ISO in the early 1980s, was meant to standardize how networking should work across different systems. Both describe the same journey — they just slice it into layers differently.</p>
+
+        <h2>2) Layer Comparison at a Glance</h2>
+
+        <figure style="margin: 1rem 0 2rem 0; text-align:center;">
+            <img src="../pictures/osi-tcpip-diagram.jpg" alt="OSI vs TCP/IP layer comparison diagram" style="max-width:100%; height:auto; border:1px solid #30363d; border-radius:12px;" />
+            <p>https://www.rtautomation.com/rtas-blog/a-refresher-course-on-osi-tcp-ip/?srsltid=AfmBOopQXE7LjVX0y5bJ53XG2UEx7bNbjQHmQjwu1RQPUAzk9yH2o0OR</p>
+            <figcaption style="margin-top:0.5rem; font-size:0.95rem; color:#8b949e;">
+                <strong>Figure:</strong> OSI (7 layers) vs TCP/IP (4 layers). TCP/IP combines OSI’s top three into <em>Application</em> and the bottom two into <em>Network Access</em>, while <em>Transport</em> and <em>Network/Internet</em> align closely.
+            </figcaption>
+        </figure>
+
+        <h2>3) What Sets Them Apart (and What’s Shared)</h2>
+        <ul>
+            <li><strong>OSI</strong> offers guidelines: break out services, interfaces, and protocols.</li>
+            <li><strong>TCP/IP</strong> is practical and protocol-focused — it evolved with the real network stack.</li>
+            <li>Both use a layered approach, define functionality per layer, and rely on <strong>packet-based</strong> data transfer.</li>
+        </ul>
+
+        <h2>4) Why Cybersecurity People Should Care</h2>
+        <ul>
+            <li>Know <strong>where attacks hit</strong> (e.g., DDoS at Network/Internet, phishing at Application).</li>
+            <li>Use tools precisely — <strong>firewalls</strong> operate around Internet/Transport; <strong>encryption</strong> at Application/Presentation.</li>
+            <li>Communicate clearly with teams — “We’re troubleshooting at <strong>Layer 3</strong>” instantly sets context.</li>
+        </ul>
+
+        <h2>5) My Takeaway</h2>
+        <p>OSI and TCP/IP aren’t dusty exam trivia — they’re the <strong>anatomy of communication</strong>. In cybersecurity, you can’t protect what you don’t understand. Next, I’m going to map real attacks (like phishing and DDoS) to the exact layers they target to turn theory into practical defense.</p>
+    </article>
+</main>
+
+<footer>
+    &copy; 2025 Jernej |
+    <a href="https://github.com/Humm1ngB1rd77">GitHub</a> |
+    <a href="https://www.linkedin.com/in/jpetek/">LinkedIn</a>
+</footer>
+
+</body>
+</html>

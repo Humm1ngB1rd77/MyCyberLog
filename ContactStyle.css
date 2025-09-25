@@ -1,0 +1,226 @@
+:root {
+    --bg: #0b0f14;
+    --card: #111827;
+    --text: #e5e7eb;
+    --muted: #9ca3af;
+    --accent: #22d3ee; /* cyan */
+    --accent-2: #a78bfa; /* violet */
+    --success: #34d399;
+    --error: #f87171;
+    --ring: rgba(34, 211, 238, 0.4);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: radial-gradient(1200px 800px at 10% 10%, rgba(34,211,238,.08), transparent 40%),
+    radial-gradient(1200px 800px at 90% 20%, rgba(167,139,250,.08), transparent 40%),
+    var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* HEADER */
+.site-header {
+    width: 100%;
+    background-color: var(--card);
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.brand {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--text);
+}
+
+nav a {
+    color: var(--text);
+    text-decoration: none;
+    margin-left: 1rem;
+    transition: color 0.2s;
+}
+
+nav a:hover,
+nav a.active {
+    color: var(--accent);
+}
+
+/* CONTACT CARD */
+.contact-wrap {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem 1rem;
+}
+
+.contact-card {
+    background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+    backdrop-filter: blur(8px);
+    padding: 2rem;
+    max-width: 700px;
+    width: 100%;
+    display: grid;
+    gap: 1.5rem;
+}
+
+.contact-topline {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.contact-avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 14px;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    color: #001015;
+    font-weight: 900;
+    font-size: 22px;
+}
+
+.contact-name {
+    font-size: 1.6rem;
+}
+
+.contact-subtitle {
+    font-size: 0.95rem;
+    color: var(--muted);
+    margin-top: 4px;
+}
+
+/* GUMBA */
+.contact-links {
+    display: flex;
+    gap: 16px;
+}
+
+.contact-btn {
+    flex: 1;
+    text-align: center;
+    padding: 14px 20px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: var(--text);
+    background: var(--card);
+    border: 1px solid rgba(255,255,255,0.06);
+    font-weight: 600;
+    font-size: 1.05rem;
+    transition: transform .1s ease, border-color .2s ease;
+}
+
+.contact-btn:hover {
+    transform: translateY(-2px);
+    border-color: var(--accent);
+}
+
+/* CTF CARD */
+.cta-card {
+    background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+    backdrop-filter: blur(8px);
+    padding: 2rem;
+    max-width: 700px;
+    width: 100%;
+    display: grid;
+    gap: 1rem;
+}
+
+.cta-card h2 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.muted {
+    color: var(--muted);
+}
+
+.flag {
+    user-select: all;
+}
+
+.unlock {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr auto;
+    background: #0d131b;
+    border: 1px dashed rgba(34,211,238,0.35);
+    padding: 12px;
+    border-radius: 12px;
+}
+
+.unlock input {
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.08);
+    background: #0b1118;
+    color: var(--text);
+    outline: none;
+    box-shadow: 0 0 0 0 var(--ring);
+    transition: box-shadow .15s ease, border-color .2s ease;
+}
+
+.unlock input:focus {
+    box-shadow: 0 0 0 6px var(--ring);
+    border-color: var(--accent);
+}
+
+.unlock button {
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    color: #001015;
+}
+
+.note {
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.cv { display: none; }
+.cv.show { display: block; }
+
+/* FOOTER */
+footer {
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--muted);
+    padding: 1rem;
+    background: var(--card);
+}
+footer a {
+    color: var(--accent);
+    text-decoration: none;
+}
+footer a:hover {
+    text-decoration: underline;
+}

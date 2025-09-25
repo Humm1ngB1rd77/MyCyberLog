@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | MyCyberLog</title>
+  <link rel="stylesheet" href="ContactStyle.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="navbar">
+    <div class="brand-search">
+      <strong class="brand">MyCyberLog</strong>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="blog.html">Blog</a>
+      <a href="about.html">About Me</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- MAIN CONTENT -->
+<main class="contact-wrap">
+  <section class="contact-card">
+    <div class="contact-topline">
+      <div class="contact-avatar">JP</div>
+      <div>
+        <h1 class="contact-name">Jernej Petek</h1>
+        <p class="contact-subtitle">
+          ICT Student at FE UL · Cyber Security · Bug Bounty · Pentesting · OSINT
+        </p>
+      </div>
+    </div>
+
+    <nav class="contact-links">
+      <a class="contact-btn" href="https://www.linkedin.com/in/jpetek/" target="_blank" rel="noopener">
+        LinkedIn
+      </a>
+      <a class="contact-btn" href="https://github.com/Humm1ngB1rd77" target="_blank" rel="noopener">
+        GitHub
+      </a>
+    </nav>
+  </section>
+
+  <!-- MINI CTF -->
+  <section class="cta-card" aria-labelledby="unlock-title">
+    <h2 id="unlock-title">🔐 Mini CTF: Unlock a special link ;)</h2>
+    <p class="muted">
+      Hint: view the source code of this page (Ctrl/Cmd + U) and decode the string
+      <code class="flag">TWlkbmlnaHRTbmFjaw==</code> (base64). Enter the key and the unlock will happen ✨
+    </p>
+    <form class="unlock" id="unlock-form" autocomplete="off">
+      <input id="key" name="key" placeholder="Enter Key" aria-label="Enter Key" />
+      <button type="submit">Odkleni</button>
+    </form>
+    <div id="feedback" class="note" role="status" aria-live="polite"></div>
+    <div id="cv" class="cv"</div>
+
+  </section>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  &copy; <span id="yr"></span> Jernej Petek |
+  <a href="https://github.com/Humm1ngB1rd77">GitHub</a> |
+  <a href="https://www.linkedin.com/in/jpetek/">LinkedIn</a>
+</footer>
+<!-- SCRIPT ZA CTF -->
+<script src="contact.js"></script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Distance visualization using HC-SR04 Ultrasonic sensor</title>
+    <meta name="description" content="What I learned from the first arduino project utilizing sensors" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+
+<header>
+    <div class="navbar">
+        <div class="brand-search">
+            <strong class="brand">MyCyberLog</strong>
+            <form class="search-bar" action="#" method="get">
+                <input type="text" name="q" placeholder="Search posts..." />
+                <button type="submit">🔍</button>
+            </form>
+        </div>
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="../blog.html">Blog</a>
+            <a href="../about.html">About Me</a>
+            <a href="../projects.html">Projects</a>
+            <a href="../contact.html">Contact</a>
+        </nav>
+    </div>
+</header>
+
+
+<main class="posts" style="max-width: 900px; margin: 2rem auto;">
+
+    <h1 class="post-title">Distance visualization using HC-SR04 Ultrasonic sensor</h1>
+
+    <article class="post">
+        <p style="color:#8b949e; font-size:0.9rem; margin-bottom:1rem;">Posted on August 9, 2025</p>
+
+        <p>
+            This project utilizes an Elegoo (Arduino) Uno R3 microcontroller, an HC-SR04 ultrasonic sensor,
+            seven LEDs, and corresponding 220-ohm resistors to create a visual distance indicator.
+            The HC-SR04 sensor works by emitting ultrasonic waves and measuring the time it takes
+            for them to bounce back after hitting an object. The Arduino processes this data to
+            calculate the distance of the object from the sensor. As the object gets closer,
+            more LEDs light up in sequence, providing an intuitive visual representation of proximity.
+            This project is a great way to understand distance sensing and microcontroller-based control
+            systems, making it suitable for beginners and hobbyists interested in electronics and programming.
+        </p>
+
+        <figure style="margin: 1rem 0 2rem 0; text-align:center;">
+            <img src="../pictures/CircuitPic.jpg" alt="My assembled circuit"
+                 style="max-width:100%; height:auto; border:1px solid #30363d; border-radius:12px;" />
+            <figcaption style="margin-top:0.5rem; font-size:0.95rem; color:#8b949e;">
+                <strong>Figure:</strong> As the object approaches the sensor, more LEDs turn on to visualize distance.
+            </figcaption>
+        </figure>
+
+        <h2>Where the idea came from</h2>
+        <p>
+            I first came across a similar project while browsing the internet and was intrigued by how simple yet
+            effective it was in visualizing distance using LEDs. Seeing how others had implemented it inspired me to
+            test it myself and gain hands-on experience. You can check out the original project
+            <a href="https://www.mrelectrouino.com/2019/07/arduino-ultrasonic-sensor-hc-sr04.html" style="color: var(--accent);" target="_blank">HERE</a>.
+        </p>
+
+        <h2>What I Learned</h2>
+        <p>
+            From working on this Arduino project, I learned a lot about both hardware and software components.
+            I gained hands-on experience with connecting various electronic components like sensors and LEDs
+            to the Arduino board, which helped me understand how these components interact in a circuit.
+            On the software side, I learned how to write and upload code to the Arduino using the Arduino IDE,
+            as well as how to troubleshoot and debug issues with the code. Additionally, I became more familiar
+            with basic programming concepts such as loops, conditionals, and input/output handling, all of
+            which are essential for creating interactive and functional projects. Overall, this project
+            improved my problem-solving skills and deepened my understanding of electronics and programming.
+        </p>
+    </article>
+</main>
+
+<footer>
+    &copy; 2025 Jernej | <a href="https://github.com/Humm1ngB1rd77" style="color: var(--accent);">GitHub</a> | <a href="https://www.linkedin.com/in/jpetek/" style="color: var(--accent);">LinkedIn</a>
+</footer>
+
+</body>
+</html>
